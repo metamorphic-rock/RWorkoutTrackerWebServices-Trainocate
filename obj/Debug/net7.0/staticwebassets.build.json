@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "c3QBYyD+xHpS0lesjFntr3xyHVhY7zEsLi6QvenDvjs=",
+  "Source": "workoutTrackerServices",
+  "BasePath": "_content/workoutTrackerServices",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}
