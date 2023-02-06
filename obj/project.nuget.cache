@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "/r2ZC3PD/c07QT3F6wxNgXAuz5d6pMtJnF0xOGzO/ZahPBS+1D9spJeDpuw3LX63ohPQENTKT/gNx8PKsk1TxQ==",
+  "dgSpecHash": "+O+uR5+drOTGIb6GTDX/lyGurQOuadBwQZiwbiW1lWoSQwN5nja4q6uGuRc2AQphFJttB9Uwz350js9JMExwnQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\ROCKY4732\\OneDrive - Willis Towers Watson\\Desktop\\Trainocate\\front-end-Project\\workoutTrackerServices\\workoutTrackerServices.csproj",
+  "projectFilePath": "C:\\Users\\ROCKY4732\\OneDrive - Willis Towers Watson\\Desktop\\Trainocate\\back-end-Projects\\Workout-Tracker-Trainocate-WebServices\\workoutTrackerServices.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\ROCKY4732\\.nuget\\packages\\microsoft.aspnetcore.openapi\\7.0.1\\microsoft.aspnetcore.openapi.7.0.1.nupkg.sha512",
     "C:\\Users\\ROCKY4732\\.nuget\\packages\\microsoft.extensions.apidescription.server\\6.0.5\\microsoft.extensions.apidescription.server.6.0.5.nupkg.sha512",

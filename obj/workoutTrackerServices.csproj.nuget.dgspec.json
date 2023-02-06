@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\ROCKY4732\\OneDrive - Willis Towers Watson\\Desktop\\Trainocate\\front-end-Project\\workoutTrackerServices\\workoutTrackerServices.csproj": {}
+    "C:\\Users\\ROCKY4732\\OneDrive - Willis Towers Watson\\Desktop\\Trainocate\\back-end-Projects\\Workout-Tracker-Trainocate-WebServices\\workoutTrackerServices.csproj": {}
   },
   "projects": {
-    "C:\\Users\\ROCKY4732\\OneDrive - Willis Towers Watson\\Desktop\\Trainocate\\front-end-Project\\workoutTrackerServices\\workoutTrackerServices.csproj": {
+    "C:\\Users\\ROCKY4732\\OneDrive - Willis Towers Watson\\Desktop\\Trainocate\\back-end-Projects\\Workout-Tracker-Trainocate-WebServices\\workoutTrackerServices.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\ROCKY4732\\OneDrive - Willis Towers Watson\\Desktop\\Trainocate\\front-end-Project\\workoutTrackerServices\\workoutTrackerServices.csproj",
+        "projectUniqueName": "C:\\Users\\ROCKY4732\\OneDrive - Willis Towers Watson\\Desktop\\Trainocate\\back-end-Projects\\Workout-Tracker-Trainocate-WebServices\\workoutTrackerServices.csproj",
         "projectName": "workoutTrackerServices",
-        "projectPath": "C:\\Users\\ROCKY4732\\OneDrive - Willis Towers Watson\\Desktop\\Trainocate\\front-end-Project\\workoutTrackerServices\\workoutTrackerServices.csproj",
+        "projectPath": "C:\\Users\\ROCKY4732\\OneDrive - Willis Towers Watson\\Desktop\\Trainocate\\back-end-Projects\\Workout-Tracker-Trainocate-WebServices\\workoutTrackerServices.csproj",
         "packagesPath": "C:\\Users\\ROCKY4732\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\ROCKY4732\\OneDrive - Willis Towers Watson\\Desktop\\Trainocate\\front-end-Project\\workoutTrackerServices\\obj\\",
+        "outputPath": "C:\\Users\\ROCKY4732\\OneDrive - Willis Towers Watson\\Desktop\\Trainocate\\back-end-Projects\\Workout-Tracker-Trainocate-WebServices\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",

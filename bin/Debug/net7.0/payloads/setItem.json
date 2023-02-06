@@ -1,7 +1,7 @@
 {
-    "id":1, 
-    "exerciseName":"OHP", 
-    "muscleGroup":"Shoulders",
-    "weight":80.0,
-    "reps":12
+    "id":3,
+    "exerciseName":"Row", 
+    "muscleGroup":"Back",
+    "weight":120,
+    "reps":8
 }

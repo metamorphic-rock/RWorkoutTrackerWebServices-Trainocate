@@ -5,7 +5,7 @@ namespace workoutTrackerServices.Operations
     {   //build a regex for exerciseName, muscleGroup and decimal places regex for weight and int limit to reps
         private Dictionary<string, object> payload;
         public Dictionary<string, List<string>> Errors { get; private set; }
-        Regex stringRegex=new Regex(@"^[a-zA-Z][a-zA-Z\s-]{3,25}$");
+        Regex stringRegex=new Regex(@"^[a-zA-Z][a-zA-Z\s-]{2,25}$");
         Regex floatRegex=new Regex(@"^\d{0,3}(\.\d{0,2})?$");
         Regex intRegex=new Regex(@"^[0-9]{0,3}$");
         public ValidateSetItems(Dictionary<string, object> payload)
@@ -69,7 +69,7 @@ namespace workoutTrackerServices.Operations
             if (!payload.ContainsKey("weight"))
             {
                 Errors["weight"].Add("weight is required");
-            }else if(!floatRegex.IsMatch((string)payload["weight"]))
+            }else if(!floatRegex.IsMatch(payload["weight"].ToString()))
             {
                 Errors["weight"].Add("weight is invalid");
             }
@@ -93,7 +93,7 @@ namespace workoutTrackerServices.Operations
             if (!payload.ContainsKey("reps"))
             {
                 Errors["reps"].Add("reps is required");
-            }else if(!intRegex.IsMatch((string)payload["reps"]))
+            }else if(!intRegex.IsMatch(payload["reps"].ToString()))
             {
                 Errors["reps"].Add("reps is invalid");
             }
