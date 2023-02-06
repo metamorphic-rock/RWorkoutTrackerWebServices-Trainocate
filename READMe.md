@@ -21,3 +21,13 @@ dotnet add package Microsoft.EntityFrameworkCore.Design
 ```
 dotnet tool install --global dotnet-ef
 ```
+
+### Migrate Database
+```
+dotnet ef migrations add ADDED.......
+```
+
+## Update Database
+```
+dotnet ef database update
+```

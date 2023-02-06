@@ -7,6 +7,9 @@ namespace workoutTrackerServices.Models
         public string MuscleGroup{get; set;}
         public float Weight{get; set;}
         public int Reps{get; set;}
+        public ExerciseItem Exercise {get; set;}
+        public int ExerciseId{get; set;}
+
         public SetItem(int id,string exerciseName,string muscleGroup,float weight,int reps)
         {
             Id=id;
