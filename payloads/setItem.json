@@ -1,7 +1,6 @@
 {
-    "id":1,
     "exerciseName":"Row", 
     "muscleGroup":"Back",
-    "weight":1200,
+    "weight":120,
     "reps":8
 }

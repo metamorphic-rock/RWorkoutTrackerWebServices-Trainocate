@@ -5,29 +5,34 @@ namespace workoutTrackerServices.Operations
 {
     public class BuildSetItemFromDictionary
     {
-        private Dictionary<string,object> data;
-        public BuildSetItemFromDictionary(Dictionary<string,object> data)
+        private Dictionary<string, object> data;
+        public BuildSetItemFromDictionary(Dictionary<string, object> data)
         {
-            this.data=data;
+            this.data = data;
             this.CleanUp();
         }
         public SetItem Execute()
         {
-            SetItem set=new SetItem();
-
-            set.Id=(int)this.data["id"];
-            set.ExerciseName=(string)this.data["exerciseName"];
-            set.MuscleGroup=(string)this.data["muscleGroup"];
-            set.Weight=(float)this.data["weight"];
-            set.Weight=(int)this.data["reps"];
+            SetItem set = new SetItem();
+            if (this.data.ContainsKey("id"))
+            {
+                set.Id = (int)this.data["id"];
+            }
+            set.ExerciseName = (string)this.data["exerciseName"];
+            set.MuscleGroup = (string)this.data["muscleGroup"];
+            set.Weight = (float)this.data["weight"];
+            set.Weight = (int)this.data["reps"];
 
             return set;
         }
         public void CleanUp()
         {
-            if (this.data["id"] is JsonElement)
+            if (this.data.ContainsKey("id"))
             {
-                this.data["id"] = int.Parse(((JsonElement)this.data["id"]).ToString());
+                if (this.data["id"] is JsonElement)
+                {
+                    this.data["id"] = int.Parse(((JsonElement)this.data["id"]).ToString());
+                }
             }
             if (this.data["exerciseName"] is JsonElement)
             {

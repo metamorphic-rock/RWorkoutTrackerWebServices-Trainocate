@@ -5,9 +5,9 @@ namespace workoutTrackerServices.Operations
     {   //build a regex for exerciseName, muscleGroup and decimal places regex for weight and int limit to reps
         private Dictionary<string, object> payload;
         public Dictionary<string, List<string>> Errors { get; private set; }
-        Regex stringRegex=new Regex(@"^[a-zA-Z][a-zA-Z\s-]{2,25}$");
-        Regex floatRegex=new Regex(@"^\d{0,3}(\.\d{0,2})?$");
-        Regex intRegex=new Regex(@"^[0-9]{0,3}$");
+        Regex stringRegex = new Regex(@"^[a-zA-Z][a-zA-Z\s-]{2,25}$");
+        Regex floatRegex = new Regex(@"^\d{0,3}(\.\d{0,2})?$");
+        Regex intRegex = new Regex(@"^[0-9]{0,3}$");
         public ValidateSetItems(Dictionary<string, object> payload)
         {
             this.payload = payload;
@@ -31,11 +31,13 @@ namespace workoutTrackerServices.Operations
             {
                 ans = true;
             }
-            if (Errors["weight"].Count>0){
-                ans =true;
+            if (Errors["weight"].Count > 0)
+            {
+                ans = true;
             }
-            if (Errors["reps"].Count>0){
-                ans =true;
+            if (Errors["reps"].Count > 0)
+            {
+                ans = true;
             }
 
             return ans;
@@ -47,13 +49,16 @@ namespace workoutTrackerServices.Operations
         }
         public void Execute()
         {
-            int id = int.Parse(payload["id"].ToString());
-
+            if (payload.ContainsKey("id"))
+            {
+                int id = int.Parse(payload["id"].ToString());
+            }
             // Name validation
             if (!payload.ContainsKey("exerciseName"))
             {
                 Errors["exerciseName"].Add("exercise name is required");
-            }else if(!stringRegex.IsMatch(payload["exerciseName"].ToString()))
+            }
+            else if (!stringRegex.IsMatch(payload["exerciseName"].ToString()))
             {
                 Errors["exerciseName"].Add("exercise name is invalid");
             }
@@ -61,7 +66,8 @@ namespace workoutTrackerServices.Operations
             if (!payload.ContainsKey("muscleGroup"))
             {
                 Errors["muscleGroup"].Add("muscle group is required");
-            }else if(!stringRegex.IsMatch(payload["muscleGroup"].ToString()))
+            }
+            else if (!stringRegex.IsMatch(payload["muscleGroup"].ToString()))
             {
                 Errors["muscleGroup"].Add("muscle group is invalid");
             }
@@ -69,7 +75,8 @@ namespace workoutTrackerServices.Operations
             if (!payload.ContainsKey("weight"))
             {
                 Errors["weight"].Add("weight is required");
-            }else if(!floatRegex.IsMatch(payload["weight"].ToString()))
+            }
+            else if (!floatRegex.IsMatch(payload["weight"].ToString()))
             {
                 Errors["weight"].Add("weight is invalid");
             }
@@ -93,7 +100,8 @@ namespace workoutTrackerServices.Operations
             if (!payload.ContainsKey("reps"))
             {
                 Errors["reps"].Add("reps is required");
-            }else if(!intRegex.IsMatch(payload["reps"].ToString()))
+            }
+            else if (!intRegex.IsMatch(payload["reps"].ToString()))
             {
                 Errors["reps"].Add("reps is invalid");
             }
