@@ -22,7 +22,7 @@ namespace workoutTrackerServices.Services
             setList.Add(set);
             return set;
         }
-        public SetItem? Find(int id)
+        public SetItem? FindById(int id)
         {
             var set = setList.Find(s =>s.Id == id);
             if(set != null){

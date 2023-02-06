@@ -35,7 +35,7 @@ namespace workoutTrackerServices.AddControllers
         [HttpGet("{id}")]
         public IActionResult Show(int id)
         {
-            var set = _setItemService.Find(id);
+            var set = _setItemService.FindById(id);
             return Ok(set);
         }
 

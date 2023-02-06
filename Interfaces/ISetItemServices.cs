@@ -5,7 +5,7 @@ namespace workoutTrackerServices.Interface
     {
         public List<SetItem> GetAll();
         public SetItem Save(SetItem set);
-        public SetItem? Find(int id);
+        public SetItem? FindById(int id);
         public SetItem? Delete(int id);
     }
 }

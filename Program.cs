@@ -21,7 +21,7 @@ namespace workoutTrackerServices
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
             //added additional services
-            builder.Services.AddScoped<ISetItemsService, SetItemServicesApplicationContext>();
+            builder.Services.AddScoped<ISetItemsService, SetItemMSSQLServices>();
 
             var app = builder.Build();
 

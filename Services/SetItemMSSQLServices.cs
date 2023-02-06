@@ -11,26 +11,38 @@ public class SetItemMSSQLServices : ISetItemsService
     private readonly DataContext _dataContext;
     public SetItemMSSQLServices(DataContext dataContext)
     {
-        _dataContext=dataContext;
+        _dataContext = dataContext;
     }
     public SetItem? Delete(int id)
     {
         throw new NotImplementedException();
     }
 
-    public SetItem? Find(int id)
+    public SetItem? FindById(int id)
     {
-        throw new NotImplementedException();
+        return _dataContext.SetItems.SingleOrDefault(s => s.Id == id);
     }
 
     public List<SetItem> GetAll()
     {
-        throw new NotImplementedException();
+        return _dataContext.SetItems.ToList<SetItem>();
     }
 
     public SetItem Save(SetItem set)
     {
-        throw new NotImplementedException();
+        if (set.Id == null || set.Id == 0)
+        {
+            _dataContext.SetItems.Add(set);
+        }
+        else
+        {
+            SetItem temp=this.FindById(set.Id);
+            temp.ExerciseName=set.ExerciseName;
+            temp.MuscleGroup=set.MuscleGroup;
+            temp.Weight=set.Weight;
+            temp.Reps=set.Reps;
+        }
         _dataContext.SaveChanges();
+        return set;
     }
 }
