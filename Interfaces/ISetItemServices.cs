@@ -1,5 +1,5 @@
 using workoutTrackerServices.Models;
-namespace workoutTrackerServices.Interface
+namespace workoutTrackerServices.Interfaces
 {
     public interface ISetItemsService
     {

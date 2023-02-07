@@ -1,6 +1,6 @@
 using System;
 using Microsoft.EntityFrameworkCore;
-using workoutTrackerServices.Interface;
+using workoutTrackerServices.Interfaces;
 using workoutTrackerServices.Services;
 using workoutTrackerServices.Data;
 namespace workoutTrackerServices
@@ -22,6 +22,7 @@ namespace workoutTrackerServices
             builder.Services.AddSwaggerGen();
             //added additional services
             builder.Services.AddScoped<ISetItemsService, SetItemMSSQLServices>();
+            builder.Services.AddScoped<IExerciseItemServices,ExerciseItemMSSQLServices>();
 
             var app = builder.Build();
 

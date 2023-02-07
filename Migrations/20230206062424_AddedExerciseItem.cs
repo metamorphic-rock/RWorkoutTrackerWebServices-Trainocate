@@ -14,7 +14,7 @@ namespace workoutTrackerServices.Migrations
                 name: "ExerciseId",
                 table: "SetItems",
                 type: "int",
-                nullable: true,
+                nullable: false,
                 defaultValue: 0);
 
             migrationBuilder.CreateTable(

@@ -1,6 +1,6 @@
 using workoutTrackerServices.Models;
 using workoutTrackerServices.Configuration;
-using workoutTrackerServices.Interface;
+using workoutTrackerServices.Interfaces;
 
 namespace workoutTrackerServices.Services
 {

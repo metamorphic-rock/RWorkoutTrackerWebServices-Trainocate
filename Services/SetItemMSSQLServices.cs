@@ -1,7 +1,6 @@
 namespace workoutTrackerServices.Services;
-
 using System.Collections.Generic;
-using workoutTrackerServices.Interface;
+using workoutTrackerServices.Interfaces;
 using workoutTrackerServices.Models;
 using Microsoft.EntityFrameworkCore;
 using workoutTrackerServices.Data;
@@ -15,7 +14,9 @@ public class SetItemMSSQLServices : ISetItemsService
     }
     public SetItem? Delete(int id)
     {
-        throw new NotImplementedException();
+        var set =_dataContext.SetItems.SingleOrDefault(s => s.Id == id);
+        _dataContext.Remove(set); //find the command for delete
+        return set;
     }
 
     public SetItem? FindById(int id)

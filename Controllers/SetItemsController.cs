@@ -1,7 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
 using workoutTrackerServices.Models;
 using workoutTrackerServices.Operations;
-using workoutTrackerServices.Interface;
+using workoutTrackerServices.Interfaces;
 using System.Text.Json;
 
 namespace workoutTrackerServices.AddControllers
@@ -56,10 +56,9 @@ namespace workoutTrackerServices.AddControllers
                 _setItemService.Save(set);
                 Console.WriteLine(set.ExerciseName);
                 Dictionary<string, object> message = new Dictionary<string, object>();
-                message.Add("message", "Ok");
+                message.Add("message", "Ok,Added a set");
                 return Ok(message);
             }
-
 
         }
         [HttpDelete("{id}")]

@@ -5,10 +5,10 @@ public class ExerciseItem
 {
     public int Id {get; set;}
     public string ExerciseName{get; set;}
-    public List<SetItem> SetItems{get; set;}
+    public List<SetItem>? SetItems{get; set;}
 
-    public ExerciseItem(SetItem set)
+    public ExerciseItem()
     {
-        this.ExerciseName=set.ExerciseName;
+        
     }
 }

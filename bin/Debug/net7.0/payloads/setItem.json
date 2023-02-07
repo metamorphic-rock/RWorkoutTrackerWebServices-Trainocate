@@ -1,6 +1,7 @@
 {
-    "exerciseName":"Pullups", 
-    "muscleGroup":"Back",
+    "exerciseName":"Benchpress", 
+    "muscleGroup":"Chest",
     "weight":120,
-    "reps":7
+    "reps":7,
+    "exerciseId":1
 }
