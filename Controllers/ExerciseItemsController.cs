@@ -59,10 +59,6 @@ namespace workoutTrackerServices.Controllers
             }
             return Ok("Exercise deleted");
         }
-
-
-        
     }
-
 }
 

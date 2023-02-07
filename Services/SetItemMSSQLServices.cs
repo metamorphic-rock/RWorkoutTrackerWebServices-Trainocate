@@ -9,9 +9,10 @@ public class SetItemMSSQLServices : ISetItemsService
 {
     private readonly DataContext _dataContext;
     private readonly IExerciseItemServices _exersiceServices;
-    public SetItemMSSQLServices(DataContext dataContext)
+    public SetItemMSSQLServices(DataContext dataContext, IExerciseItemServices exerciseItemService)
     {
         _dataContext = dataContext;
+        _exersiceServices = exerciseItemService;
     }
     public SetItem? Delete(int id)
     {
@@ -27,10 +28,11 @@ public class SetItemMSSQLServices : ISetItemsService
 
     public List<SetItem> GetAll()
     {
-        List<SetItem> sets=_dataContext.SetItems.ToList<SetItem>();
+        List<SetItem> sets= _dataContext.SetItems.ToList<SetItem>();
         foreach(SetItem set in sets)
         {
-            set.Exercise=_exersiceServices.FindById(set.ExerciseId);
+            var Exercise=_exersiceServices.FindById(set.ExerciseId);
+            set.ExerciseName=Exercise.ExerciseName;
         }
         return sets;
     }

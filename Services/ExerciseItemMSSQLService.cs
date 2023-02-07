@@ -28,7 +28,7 @@ public class ExerciseItemMSSQLServices : IExerciseItemServices
         return _dataContext.ExerciseItems.ToList<ExerciseItem>();
     }
 
-    public ExerciseItem Save(ExerciseItem exercise)
+    public void Save(ExerciseItem exercise)
     {
         if (exercise.Id == null || exercise.Id == 0)
         {
@@ -41,6 +41,5 @@ public class ExerciseItemMSSQLServices : IExerciseItemServices
             
         }
         _dataContext.SaveChanges();
-        return exercise;
     }
 }
