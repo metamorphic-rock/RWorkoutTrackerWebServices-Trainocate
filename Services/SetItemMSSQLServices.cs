@@ -8,6 +8,7 @@ using workoutTrackerServices.Data;
 public class SetItemMSSQLServices : ISetItemsService
 {
     private readonly DataContext _dataContext;
+    private readonly IExerciseItemServices _exersiceServices;
     public SetItemMSSQLServices(DataContext dataContext)
     {
         _dataContext = dataContext;
@@ -26,7 +27,12 @@ public class SetItemMSSQLServices : ISetItemsService
 
     public List<SetItem> GetAll()
     {
-        return _dataContext.SetItems.ToList<SetItem>();
+        List<SetItem> sets=_dataContext.SetItems.ToList<SetItem>();
+        foreach(SetItem set in sets)
+        {
+            set.Exercise=_exersiceServices.FindById(set.ExerciseId);
+        }
+        return sets;
     }
 
     public SetItem Save(SetItem set)

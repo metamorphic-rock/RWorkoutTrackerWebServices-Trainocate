@@ -21,7 +21,7 @@ namespace workoutTrackerServices.Operations
             set.ExerciseName = (string)this.data["exerciseName"];
             set.MuscleGroup = (string)this.data["muscleGroup"];
             set.Weight = (float)this.data["weight"];
-            set.Weight = (int)this.data["reps"];
+            set.Reps = (int)this.data["reps"];
             set.ExerciseId=(int)this.data["exerciseId"];
 
             return set;

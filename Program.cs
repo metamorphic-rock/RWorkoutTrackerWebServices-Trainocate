@@ -3,6 +3,8 @@ using Microsoft.EntityFrameworkCore;
 using workoutTrackerServices.Interfaces;
 using workoutTrackerServices.Services;
 using workoutTrackerServices.Data;
+using System.Text.Json.Serialization;
+
 namespace workoutTrackerServices
 {
     class Program
@@ -13,7 +15,10 @@ namespace workoutTrackerServices
 
             // Add services to the container.
 
-            builder.Services.AddControllers();
+            builder.Services.AddControllers().AddJsonOptions(options=>{
+                options.JsonSerializerOptions.ReferenceHandler=ReferenceHandler.IgnoreCycles;
+                options.JsonSerializerOptions.WriteIndented=true;
+            });
             builder.Services.AddDbContext<DataContext>(options=>{
                 options.UseSqlServer(builder.Configuration.GetConnectionString("MSSqlConnection"));
             });

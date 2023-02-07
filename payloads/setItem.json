@@ -1,7 +1,7 @@
 {
-    "exerciseName":"Row", 
-    "muscleGroup":"Back",
-    "weight":100,
-    "reps":12,
-    "exerciseId":2
+    "exerciseName":"Benchpress", 
+    "muscleGroup":"Chest",
+    "weight":150,
+    "reps":1,
+    "exerciseId":1
 }
