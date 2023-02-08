@@ -1,3 +1,6 @@
+# WorkoutTrackerWebServices
+This will serve as the backend for the Workout Tracker Webapp.
+It contains the models, interface, commands, and controllers for the SetItem, ExerciseItem and WorkoutItem. 
 ### HttpGet
 ```
 curl http://localhost:5211/set_items | jq
