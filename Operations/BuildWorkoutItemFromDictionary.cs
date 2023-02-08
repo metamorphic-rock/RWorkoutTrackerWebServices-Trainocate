@@ -17,7 +17,7 @@ public class BuildWorkoutItemFromDictionary
             workout.Id = (int)this.data["id"];
         }
         workout.WorkoutTitle = (string)this.data["workoutTitle"];
-        workout.Date = (DateTime)this.data["date"]; //Check this later
+        workout.Date = (DateTime)(this.data["date"]); //Check this later
 
         return workout;
     }
@@ -36,7 +36,7 @@ public class BuildWorkoutItemFromDictionary
         }
         if (this.data["date"] is JsonElement)
         {
-            this.data["date"] = DateOnly.Parse(((JsonElement)this.data["date"]).ToString());
+            this.data["date"] = DateTime.Parse(((JsonElement)this.data["date"]).ToString());
         }
     }
 }

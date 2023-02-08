@@ -18,6 +18,7 @@ namespace workoutTrackerServices.Operations
                 exercise.Id = (int)this.data["id"];
             }
             exercise.ExerciseName = (string)this.data["exerciseName"];
+            exercise.WorkoutId=int.Parse((this.data["workoutId"]).ToString());
 
             return exercise;
         }
@@ -33,6 +34,10 @@ namespace workoutTrackerServices.Operations
             if (this.data["exerciseName"] is JsonElement)
             {
                 this.data["exerciseName"] = ((JsonElement)this.data["exerciseName"]).ToString();
+            }
+            if (this.data["workoutId"] is JsonElement)
+            {
+                this.data["workoutId"] = int.Parse(((JsonElement)this.data["workoutId"]).ToString());
             }
         }
     }

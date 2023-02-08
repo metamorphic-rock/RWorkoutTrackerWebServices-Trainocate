@@ -22,7 +22,8 @@ namespace workoutTrackerServices.Operations
             set.MuscleGroup = (string)this.data["muscleGroup"];
             set.Weight = (float)this.data["weight"];
             set.Reps = (int)this.data["reps"];
-            set.ExerciseId=(int)this.data["exerciseId"];
+            set.ExerciseId = (int)this.data["exerciseId"];
+            set.WorkoutId=(int)this.data["workoutId"];
 
             return set;
         }
@@ -54,6 +55,10 @@ namespace workoutTrackerServices.Operations
             if (this.data["exerciseId"] is JsonElement)
             {
                 this.data["exerciseId"] = int.Parse(((JsonElement)this.data["exerciseId"]).ToString());
+            }
+            if (this.data["workoutId"] is JsonElement)
+            {
+                this.data["workoutId"] = int.Parse(((JsonElement)this.data["workoutId"]).ToString());
             }
         }
 
