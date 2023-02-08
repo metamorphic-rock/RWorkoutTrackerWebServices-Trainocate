@@ -20,13 +20,13 @@ namespace workoutTrackerServices.Controllers
         {
             Dictionary<string, List<ExerciseItem>> exerciseList = new Dictionary<string, List<ExerciseItem>>();
             exerciseList.Add("Exercises", _exerciseItemService.GetAll());
-            return Ok();
+            return Ok(exerciseList);
         }
         [HttpGet("{id}")]
         public IActionResult Show(int id)
         {
             var exercise =_exerciseItemService.FindById(id);
-            return Ok();
+            return Ok(exercise);
         }
         [HttpPost("")]
         public IActionResult Save([FromBody] object payload)

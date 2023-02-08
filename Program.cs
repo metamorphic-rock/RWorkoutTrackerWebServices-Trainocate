@@ -12,8 +12,14 @@ namespace workoutTrackerServices
         static void Main(string[] args)
         {
             WebApplicationBuilder builder = WebApplication.CreateBuilder(args);
+            var corsConfigName="CORS-Config";
 
             // Add services to the container.
+            builder.Services.AddCors(options=>{
+                options.AddPolicy(name: corsConfigName, policy=>{
+                    policy.WithOrigins("*").AllowAnyHeader().AllowAnyMethod();
+                });
+            });
 
             builder.Services.AddControllers().AddJsonOptions(options=>{
                 options.JsonSerializerOptions.ReferenceHandler=ReferenceHandler.IgnoreCycles;
@@ -28,6 +34,7 @@ namespace workoutTrackerServices
             //added additional services
             builder.Services.AddScoped<ISetItemsService, SetItemMSSQLServices>();
             builder.Services.AddScoped<IExerciseItemServices,ExerciseItemMSSQLServices>();
+            builder.Services.AddScoped<IWorkoutItemServices,WorkoutItemMSSQLServices>();
 
             var app = builder.Build();
 
@@ -37,7 +44,7 @@ namespace workoutTrackerServices
                 app.UseSwagger();
                 app.UseSwaggerUI();
             }
-
+            app.UseCors(corsConfigName);
             app.UseHttpsRedirection();
 
             app.UseAuthorization();

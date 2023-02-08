@@ -37,7 +37,6 @@ C:\Users\ROCKY4732\OneDrive - Willis Towers Watson\Desktop\Trainocate\front-end-
 C:\Users\ROCKY4732\OneDrive - Willis Towers Watson\Desktop\Trainocate\back-end-Projects\Workout-Tracker-Trainocate-WebServices\bin\Debug\net7.0\appsettings.Development.json
 C:\Users\ROCKY4732\OneDrive - Willis Towers Watson\Desktop\Trainocate\back-end-Projects\Workout-Tracker-Trainocate-WebServices\bin\Debug\net7.0\appsettings.json
 C:\Users\ROCKY4732\OneDrive - Willis Towers Watson\Desktop\Trainocate\back-end-Projects\Workout-Tracker-Trainocate-WebServices\bin\Debug\net7.0\payloads\setItem.json
-C:\Users\ROCKY4732\OneDrive - Willis Towers Watson\Desktop\Trainocate\back-end-Projects\Workout-Tracker-Trainocate-WebServices\bin\Debug\net7.0\payloads\setItem3.json
 C:\Users\ROCKY4732\OneDrive - Willis Towers Watson\Desktop\Trainocate\back-end-Projects\Workout-Tracker-Trainocate-WebServices\bin\Debug\net7.0\workoutTrackerServices.exe
 C:\Users\ROCKY4732\OneDrive - Willis Towers Watson\Desktop\Trainocate\back-end-Projects\Workout-Tracker-Trainocate-WebServices\bin\Debug\net7.0\workoutTrackerServices.deps.json
 C:\Users\ROCKY4732\OneDrive - Willis Towers Watson\Desktop\Trainocate\back-end-Projects\Workout-Tracker-Trainocate-WebServices\bin\Debug\net7.0\workoutTrackerServices.runtimeconfig.json
@@ -113,3 +112,4 @@ C:\Users\ROCKY4732\OneDrive - Willis Towers Watson\Desktop\Trainocate\back-end-P
 C:\Users\ROCKY4732\OneDrive - Willis Towers Watson\Desktop\Trainocate\back-end-Projects\Workout-Tracker-Trainocate-WebServices\bin\Debug\net7.0\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
 C:\Users\ROCKY4732\OneDrive - Willis Towers Watson\Desktop\Trainocate\back-end-Projects\Workout-Tracker-Trainocate-WebServices\bin\Debug\net7.0\runtimes\win\lib\netcoreapp3.0\System.Windows.Extensions.dll
 C:\Users\ROCKY4732\OneDrive - Willis Towers Watson\Desktop\Trainocate\back-end-Projects\Workout-Tracker-Trainocate-WebServices\bin\Debug\net7.0\payloads\exerciseItem.json
+C:\Users\ROCKY4732\OneDrive - Willis Towers Watson\Desktop\Trainocate\back-end-Projects\Workout-Tracker-Trainocate-WebServices\bin\Debug\net7.0\payloads\workoutItem.json
