@@ -8,30 +8,29 @@ namespace workoutTrackerServices.Controllers
 {
     [ApiController]
     [Route("exercise_items")]
-    public class ExerciseItemController: ControllerBase
+    public class ExerciseItemController : ControllerBase
     {
         private readonly IExerciseItemServices _exerciseItemService;
         public ExerciseItemController(IExerciseItemServices exerciseItemServices)
         {
-            _exerciseItemService=exerciseItemServices;
+            _exerciseItemService = exerciseItemServices;
         }
         [HttpGet("")]
         public IActionResult Index()
         {
-            Dictionary<string, List<ExerciseItem>> exerciseList = new Dictionary<string, List<ExerciseItem>>();
-            exerciseList.Add("Exercises", _exerciseItemService.GetAll());
+            List<ExerciseItem> exerciseList = _exerciseItemService.GetAll();
             return Ok(exerciseList);
         }
         [HttpGet("{id}")]
         public IActionResult Show(int id)
         {
-            var exercise =_exerciseItemService.FindById(id);
+            var exercise = _exerciseItemService.FindById(id);
             return Ok(exercise);
         }
         [HttpPost("")]
         public IActionResult Save([FromBody] object payload)
         {
-             Dictionary<string, object> hash = JsonSerializer.Deserialize<Dictionary<string, object>>(payload.ToString());
+            Dictionary<string, object> hash = JsonSerializer.Deserialize<Dictionary<string, object>>(payload.ToString());
             ValidateExerciseItems validator = new ValidateExerciseItems(hash);
             validator.Execute();
             if (validator.HasErrors())
@@ -42,6 +41,7 @@ namespace workoutTrackerServices.Controllers
             {
                 BuildExerciseItemFromDictionary builder = new BuildExerciseItemFromDictionary(hash);
                 ExerciseItem exercise = builder.Execute();
+                Console.WriteLine(exercise);
                 _exerciseItemService.Save(exercise);
                 Console.WriteLine(exercise.ExerciseName);
                 Dictionary<string, object> message = new Dictionary<string, object>();

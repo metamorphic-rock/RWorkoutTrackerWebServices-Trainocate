@@ -6,7 +6,7 @@ public class ValidateWorkoutItems
     private Dictionary<string, object> payload;
     public Dictionary<string, List<string>> Errors { get; private set; }
     Regex stringRegex = new Regex(@"^[a-zA-Z][a-zA-Z\s-]{2,25}$");
-    //Regex dateRegex = new Regex(@"^20[2-3][3-9]/0[1-9]|1[0-2]/0[1-9]|[12][0-9]|3[01]$");
+    Regex dateRegex = new Regex(@"^20[2-3][3-9]/0[1-9]|1[0-2]/0[1-9]|[12][0-9]|3[01]$");
     public ValidateWorkoutItems(Dictionary<string, object> payload)
     {
         this.payload = payload;
@@ -50,9 +50,9 @@ public class ValidateWorkoutItems
         {
             Errors["date"].Add("Date is required");
         }
-        // else if (!dateRegex.IsMatch((payload["date"]).ToString()))
-        // {
-        //     Errors["date"].Add("date format is invalid");
-        // }
+        else if (!dateRegex.IsMatch((payload["date"]).ToString()))
+        {
+            Errors["date"].Add("date format is invalid");
+        }
     }
 }

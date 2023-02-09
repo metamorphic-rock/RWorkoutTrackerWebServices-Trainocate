@@ -20,8 +20,7 @@ namespace workoutTrackerServices.Controllers
             [HttpGet("")]
             public IActionResult Index()
             {
-                Dictionary<string, List<WorkoutItem>> workoutList = new Dictionary<string, List<WorkoutItem>>();
-                workoutList.Add("Workout", _workoutItemServices.GetAll());
+                List<WorkoutItem> workoutList =_workoutItemServices.GetAll();
                 return Ok(workoutList);
             }
             public IActionResult Show(int id)

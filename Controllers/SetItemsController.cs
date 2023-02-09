@@ -25,8 +25,7 @@ namespace workoutTrackerServices.AddControllers
         public IActionResult Index()
 
         {
-            Dictionary<string, List<SetItem>> setList = new Dictionary<string, List<SetItem>>();
-            setList.Add("Sets", _setItemService.GetAll());
+            List<SetItem> setList= _setItemService.GetAll();
             return Ok(setList); //use jsonserializer if you want to concatenate a string and setList
         }
 
@@ -67,9 +66,9 @@ namespace workoutTrackerServices.AddControllers
             SetItem set = _setItemService.Delete(id);
             if (set == null)
             {
-                return Ok("That set is not found");
+                return UnprocessableEntity("can't delete");
             }
-            return Ok("Set deleted");
+            return Ok(set);
         }
 
     }

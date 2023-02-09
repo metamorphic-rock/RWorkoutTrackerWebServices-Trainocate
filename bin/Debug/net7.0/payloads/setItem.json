@@ -3,5 +3,6 @@
     "muscleGroup":"Quads",
     "weight":180,
     "reps":7,
-    "exerciseId":4
+    "exerciseId":4,
+    "workoutId":1
 }
