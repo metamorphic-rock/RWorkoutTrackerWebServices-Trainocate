@@ -52,7 +52,7 @@ namespace workoutTrackerServices.Controllers
             [HttpGet("latest")]
             public IActionResult GetLastAdded()
             {
-                WorkoutItem workout = _setItemService.GetLastAdded();
+                WorkoutItem workout = _workoutItemServices.GetLastAdded();
                 return Ok(workout);
             }
             [HttpDelete("{id}")]
