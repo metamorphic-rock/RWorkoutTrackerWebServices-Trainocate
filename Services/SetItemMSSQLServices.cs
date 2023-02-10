@@ -18,6 +18,7 @@ public class SetItemMSSQLServices : ISetItemsService
     {
         var set =_dataContext.SetItems.SingleOrDefault(s => s.Id == id);
         _dataContext.Remove(set); //find the command for delete
+        _dataContext.SaveChanges();
         return set;
     }
 
@@ -35,6 +36,11 @@ public class SetItemMSSQLServices : ISetItemsService
             set.ExerciseName=Exercise.ExerciseName;
         }
         return sets;
+    }
+    public SetItem GetLastAdded()
+    {
+        List<SetItem> sets=_dataContext.SetItems.ToList<SetItem>();
+        return sets.LastOrDefault();
     }
 
     public SetItem Save(SetItem set)

@@ -15,6 +15,7 @@ public class ExerciseItemMSSQLServices : IExerciseItemServices
     {
         var exercise = _dataContext.ExerciseItems.SingleOrDefault(e => e.Id == id);
         _dataContext.Remove(exercise);
+        _dataContext.SaveChanges();
         return exercise;
     }
 
@@ -26,6 +27,11 @@ public class ExerciseItemMSSQLServices : IExerciseItemServices
     public List<ExerciseItem> GetAll()
     {
         return _dataContext.ExerciseItems.ToList<ExerciseItem>();
+    }
+    public ExerciseItem GetLastAdded()
+    {
+        List<ExerciseItem> exercises=_dataContext.ExerciseItems.ToList();
+        return exercises.LastOrDefault();
     }
 
     public void Save(ExerciseItem exercise)

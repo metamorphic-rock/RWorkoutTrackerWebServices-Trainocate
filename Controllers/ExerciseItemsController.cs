@@ -49,6 +49,12 @@ namespace workoutTrackerServices.Controllers
                 return Ok(message);
             }
         }
+        [HttpGet("latest")]
+        public IActionResult GetLastAdded()
+        {
+            ExerciseItem exercise=_exerciseItemService.GetLastAdded();
+            return Ok(exercise);
+        }
         [HttpDelete("{id}")]
         public IActionResult Delete(int id)
         {

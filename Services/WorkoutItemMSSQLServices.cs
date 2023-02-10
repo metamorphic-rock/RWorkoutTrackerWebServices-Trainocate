@@ -14,6 +14,7 @@ public class WorkoutItemMSSQLServices : IWorkoutItemServices
     {
         var workout =_dataContext.WorkoutItems.SingleOrDefault(w => w.Id ==id);
         _dataContext.Remove(workout);
+        _dataContext.SaveChanges();
         return workout;
     }
 
@@ -25,6 +26,11 @@ public class WorkoutItemMSSQLServices : IWorkoutItemServices
     public List<WorkoutItem> GetAll()
     {
         return _dataContext.WorkoutItems.ToList<WorkoutItem>();
+    }
+    public WorkoutItem GetLastAdded()
+    {
+        List<WorkoutItem> workouts= _dataContext.WorkoutItems.ToList<WorkoutItem>();
+        return workouts.LastOrDefault();
     }
 
     public void Save(WorkoutItem workout)

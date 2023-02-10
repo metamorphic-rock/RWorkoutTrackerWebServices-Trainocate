@@ -20,7 +20,7 @@ namespace workoutTrackerServices.Controllers
             [HttpGet("")]
             public IActionResult Index()
             {
-                List<WorkoutItem> workoutList =_workoutItemServices.GetAll();
+                List<WorkoutItem> workoutList = _workoutItemServices.GetAll();
                 return Ok(workoutList);
             }
             public IActionResult Show(int id)
@@ -48,6 +48,12 @@ namespace workoutTrackerServices.Controllers
                     message.Add("message", "Ok, added an workout");
                     return Ok(message);
                 }
+            }
+            [HttpGet("latest")]
+            public IActionResult GetLastAdded()
+            {
+                WorkoutItem workout = _setItemService.GetLastAdded();
+                return Ok(workout);
             }
             [HttpDelete("{id}")]
             public IActionResult Delete(int id)

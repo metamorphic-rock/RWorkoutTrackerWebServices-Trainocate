@@ -60,6 +60,12 @@ namespace workoutTrackerServices.AddControllers
             }
 
         }
+        [HttpGet("latest")]
+        public IActionResult GetLastAdded()
+        {
+            SetItem set=_setItemService.GetLastAdded();
+            return Ok(set);
+        }
         [HttpDelete("{id}")]
         public IActionResult Delete(int id)
         {
