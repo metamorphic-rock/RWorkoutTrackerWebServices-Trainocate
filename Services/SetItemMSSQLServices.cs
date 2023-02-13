@@ -53,7 +53,6 @@ public class SetItemMSSQLServices : ISetItemsService
         {
             SetItem temp=this.FindById(set.Id);
             temp.ExerciseName=set.ExerciseName;
-            temp.MuscleGroup=set.MuscleGroup;
             temp.Weight=set.Weight;
             temp.Reps=set.Reps;
         }

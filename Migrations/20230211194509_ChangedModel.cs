@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace workoutTrackerServices.Migrations
 {
     /// <inheritdoc />
-    public partial class AddedThreeTables : Migration
+    public partial class ChangedModel : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -32,6 +32,7 @@ namespace workoutTrackerServices.Migrations
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     ExerciseName = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    MuscleGroup = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     WorkoutId = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
@@ -51,7 +52,6 @@ namespace workoutTrackerServices.Migrations
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     ExerciseName = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    MuscleGroup = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Weight = table.Column<float>(type: "real", nullable: false),
                     Reps = table.Column<int>(type: "int", nullable: false),
                     ExerciseId = table.Column<int>(type: "int", nullable: false),

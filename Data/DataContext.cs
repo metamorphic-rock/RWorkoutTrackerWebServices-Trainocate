@@ -12,13 +12,14 @@ public class DataContext: DbContext
         modelBuilder.Entity<SetItem>()
             .HasOne(s => s.Exercise)
             .WithMany(e => e.SetItems).
-             OnDelete(DeleteBehavior.ClientSetNull);
+             OnDelete(DeleteBehavior.ClientNoAction);
         modelBuilder.Entity<ExerciseItem>()
             .HasOne(e=> e.Workout)
             .WithMany(w=> w.ExerciseItems).
-            OnDelete(DeleteBehavior.ClientSetNull);
+            OnDelete(DeleteBehavior.ClientNoAction);
         modelBuilder.Entity<SetItem>()
             .HasOne(s=>s.workout);
+            
                        
     }
     public DataContext(DbContextOptions<DataContext> options): base(options)

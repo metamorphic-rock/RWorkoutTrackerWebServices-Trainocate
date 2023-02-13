@@ -4,7 +4,7 @@ namespace workoutTrackerServices.Models
     {
         public int Id{get; set;}
         public string ExerciseName{get; set;}
-        public string MuscleGroup{get; set;}
+        
         public float Weight{get; set;}
         public int Reps{get; set;}
         public ExerciseItem Exercise {get; set;}
@@ -12,11 +12,10 @@ namespace workoutTrackerServices.Models
         public WorkoutItem workout{get; set;}
         public int WorkoutId{get; set;}
 
-        public SetItem(int id,string exerciseName,string muscleGroup,float weight,int reps)
+        public SetItem(int id,string exerciseName,float weight,int reps)
         {
             Id=id;
-            ExerciseName=exerciseName;
-            MuscleGroup=muscleGroup;
+            ExerciseName=exerciseName;      
             Weight=weight;
             Reps=reps;
         }
@@ -24,7 +23,6 @@ namespace workoutTrackerServices.Models
         {
           
             ExerciseName="";
-            MuscleGroup="";
               
         }
     }

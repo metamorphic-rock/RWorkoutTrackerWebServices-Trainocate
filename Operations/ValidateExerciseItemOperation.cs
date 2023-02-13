@@ -11,6 +11,7 @@ namespace workoutTrackerServices.Operations
             this.payload = payload;
             this.Errors = new Dictionary<string, List<string>>();
             Errors.Add("exerciseName", new List<string>());
+            Errors.Add("muscleGroup",new List<string>());
         }
         public bool HasErrors()
         {
@@ -39,6 +40,16 @@ namespace workoutTrackerServices.Operations
             else if (!stringRegex.IsMatch(payload["exerciseName"].ToString()))
             {
                 Errors["exerciseName"].Add("exercise name is invalid");
+            }
+
+
+            if (!payload.ContainsKey("muscleGroup"))
+            {
+                Errors["muscleGroup"].Add("muscle group is required");
+            }
+            else if (!stringRegex.IsMatch(payload["muscleGroup"].ToString()))
+            {
+                Errors["muscleGroup"].Add("exercise group is invalid");
             }
         }      
     }

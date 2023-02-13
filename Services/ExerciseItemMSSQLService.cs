@@ -44,6 +44,7 @@ public class ExerciseItemMSSQLServices : IExerciseItemServices
         {
             ExerciseItem temp = this.FindById(exercise.Id);
             temp.ExerciseName = exercise.ExerciseName;
+            temp.MuscleGroup= exercise.MuscleGroup;
             
         }
         _dataContext.SaveChanges();

@@ -63,15 +63,6 @@ namespace workoutTrackerServices.Operations
                 Errors["exerciseName"].Add("exercise name is invalid");
             }
 
-            if (!payload.ContainsKey("muscleGroup"))
-            {
-                Errors["muscleGroup"].Add("muscle group is required");
-            }
-            else if (!stringRegex.IsMatch(payload["muscleGroup"].ToString()))
-            {
-                Errors["muscleGroup"].Add("muscle group is invalid");
-            }
-
             if (!payload.ContainsKey("weight"))
             {
                 Errors["weight"].Add("weight is required");

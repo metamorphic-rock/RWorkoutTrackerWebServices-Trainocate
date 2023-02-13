@@ -34,6 +34,10 @@ namespace workoutTrackerServices.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<string>("MuscleGroup")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<int>("WorkoutId")
                         .HasColumnType("int");
 
@@ -56,10 +60,6 @@ namespace workoutTrackerServices.Migrations
                         .HasColumnType("int");
 
                     b.Property<string>("ExerciseName")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("MuscleGroup")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
@@ -106,6 +106,7 @@ namespace workoutTrackerServices.Migrations
                     b.HasOne("workoutTrackerServices.Models.WorkoutItem", "Workout")
                         .WithMany("ExerciseItems")
                         .HasForeignKey("WorkoutId")
+                        .OnDelete(DeleteBehavior.ClientNoAction)
                         .IsRequired();
 
                     b.Navigation("Workout");
@@ -116,6 +117,7 @@ namespace workoutTrackerServices.Migrations
                     b.HasOne("workoutTrackerServices.Models.ExerciseItem", "Exercise")
                         .WithMany("SetItems")
                         .HasForeignKey("ExerciseId")
+                        .OnDelete(DeleteBehavior.ClientNoAction)
                         .IsRequired();
 
                     b.HasOne("workoutTrackerServices.Models.WorkoutItem", "workout")
