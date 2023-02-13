@@ -25,7 +25,10 @@ dotnet add package Microsoft.EntityFrameworkCore.Design
 ```
 dotnet tool install --global dotnet-ef
 ```
-
+### Drop Database
+```
+dotnet ef database drop
+```
 ### Migrate Database
 ```
 dotnet ef migrations add ADDED.......
