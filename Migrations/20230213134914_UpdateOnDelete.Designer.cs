@@ -12,8 +12,8 @@ using workoutTrackerServices.Data;
 namespace workoutTrackerServices.Migrations
 {
     [DbContext(typeof(DataContext))]
-    [Migration("20230211194509_ChangedModel")]
-    partial class ChangedModel
+    [Migration("20230213134914_UpdateOnDelete")]
+    partial class UpdateOnDelete
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -109,7 +109,6 @@ namespace workoutTrackerServices.Migrations
                     b.HasOne("workoutTrackerServices.Models.WorkoutItem", "Workout")
                         .WithMany("ExerciseItems")
                         .HasForeignKey("WorkoutId")
-                        .OnDelete(DeleteBehavior.ClientNoAction)
                         .IsRequired();
 
                     b.Navigation("Workout");
@@ -120,7 +119,6 @@ namespace workoutTrackerServices.Migrations
                     b.HasOne("workoutTrackerServices.Models.ExerciseItem", "Exercise")
                         .WithMany("SetItems")
                         .HasForeignKey("ExerciseId")
-                        .OnDelete(DeleteBehavior.ClientNoAction)
                         .IsRequired();
 
                     b.HasOne("workoutTrackerServices.Models.WorkoutItem", "workout")

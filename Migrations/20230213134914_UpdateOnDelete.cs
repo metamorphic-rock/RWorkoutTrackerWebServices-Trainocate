@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace workoutTrackerServices.Migrations
 {
     /// <inheritdoc />
-    public partial class ChangedModel : Migration
+    public partial class UpdateOnDelete : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)

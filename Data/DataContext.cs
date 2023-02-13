@@ -11,14 +11,17 @@ public class DataContext: DbContext
     {
         modelBuilder.Entity<SetItem>()
             .HasOne(s => s.Exercise)
-            .WithMany(e => e.SetItems).
-             OnDelete(DeleteBehavior.ClientNoAction);
+            .WithMany(e => e.SetItems)
+            .OnDelete(DeleteBehavior.ClientSetNull);
+             
         modelBuilder.Entity<ExerciseItem>()
             .HasOne(e=> e.Workout)
-            .WithMany(w=> w.ExerciseItems).
-            OnDelete(DeleteBehavior.ClientNoAction);
+            .WithMany(w=> w.ExerciseItems)
+            .OnDelete(DeleteBehavior.ClientSetNull);
         modelBuilder.Entity<SetItem>()
             .HasOne(s=>s.workout);
+            
+            
             
                        
     }

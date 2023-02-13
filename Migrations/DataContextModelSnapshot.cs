@@ -106,7 +106,6 @@ namespace workoutTrackerServices.Migrations
                     b.HasOne("workoutTrackerServices.Models.WorkoutItem", "Workout")
                         .WithMany("ExerciseItems")
                         .HasForeignKey("WorkoutId")
-                        .OnDelete(DeleteBehavior.ClientNoAction)
                         .IsRequired();
 
                     b.Navigation("Workout");
@@ -117,7 +116,6 @@ namespace workoutTrackerServices.Migrations
                     b.HasOne("workoutTrackerServices.Models.ExerciseItem", "Exercise")
                         .WithMany("SetItems")
                         .HasForeignKey("ExerciseId")
-                        .OnDelete(DeleteBehavior.ClientNoAction)
                         .IsRequired();
 
                     b.HasOne("workoutTrackerServices.Models.WorkoutItem", "workout")
