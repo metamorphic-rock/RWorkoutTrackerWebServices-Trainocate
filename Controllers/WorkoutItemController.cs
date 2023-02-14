@@ -49,6 +49,19 @@ namespace workoutTrackerServices.Controllers
                     return Ok(message);
                 }
             }
+            [HttpPut("{id}")]
+            public IActionResult UpdateData([FromBody] WorkoutItem payload, int id)
+            {   
+                var currentData=_workoutItemServices.FindById(id);
+                if(currentData==null)
+                {
+                    return NotFound();
+                }
+                currentData.WorkoutTitle=payload.WorkoutTitle;
+                currentData.Date=payload.Date;
+                _workoutItemServices.Save(currentData);
+                return Ok();
+            }
             [HttpGet("latest")]
             public IActionResult GetLastAdded()
             {

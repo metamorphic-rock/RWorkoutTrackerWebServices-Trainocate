@@ -43,7 +43,7 @@ public class WorkoutItemMSSQLServices : IWorkoutItemServices
         {
             WorkoutItem temp = this.FindById(workout.Id);
             temp.WorkoutTitle = workout.WorkoutTitle;
-            
+            temp.Date=workout.Date;        
         }
         _dataContext.SaveChanges();
     }
