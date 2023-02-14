@@ -60,6 +60,19 @@ namespace workoutTrackerServices.AddControllers
             }
 
         }
+        [HttpPut("{id}")]
+            public IActionResult UpdateData([FromBody] SetItem payload, int id)
+            {   
+                var currentData=_setItemService.FindById(id);
+                if(currentData==null)
+                {
+                    return NotFound();
+                }
+                currentData.Weight=payload.Weight;
+                currentData.Reps=payload.Reps;
+                _setItemService.Save(payload);
+                return Ok();
+            }
         [HttpGet("latest")]
         public IActionResult GetLastAdded()
         {

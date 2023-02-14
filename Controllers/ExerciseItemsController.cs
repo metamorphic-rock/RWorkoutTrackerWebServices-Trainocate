@@ -49,6 +49,19 @@ namespace workoutTrackerServices.Controllers
                 return Ok(message);
             }
         }
+        [HttpPut("{id}")]
+            public IActionResult UpdateData([FromBody] ExerciseItem payload, int id)
+            {   
+                var currentData=_exerciseItemService.FindById(id);
+                if(currentData==null)
+                {
+                    return NotFound();
+                }
+                currentData.ExerciseName=payload.ExerciseName;
+                currentData.MuscleGroup=payload.MuscleGroup;
+                _exerciseItemService.Save(currentData);
+                return Ok();
+            }
         [HttpGet("latest")]
         public IActionResult GetLastAdded()
         {
