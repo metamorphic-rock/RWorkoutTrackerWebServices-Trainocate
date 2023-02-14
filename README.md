@@ -38,3 +38,7 @@ dotnet ef migrations add ADDED.......
 ```
 dotnet ef database update
 ```
+### Reset database primary id
+```
+DBCC CHECKIDENT('myTable', RESEED, 0);
+```
